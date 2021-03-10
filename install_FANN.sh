@@ -7,8 +7,8 @@ export LD_LIBRARY_PATH=/opt/gcc/6.2.0/linux/gcc-6.2.0_64/lib64:${LD_LIBRARY_PATH
 
 mkdir -p build
 pushd build
-    echo "CMake fann ..."
-    cmake .. -DCMAKE_INSTALL_PREFIX=../fann
-    echo "Install fann ..."
+    echo "CMake FANN ..."
+    cmake .. -DCMAKE_INSTALL_PREFIX=../FANN
+    echo "Install FANN ..."
     make install
 popd

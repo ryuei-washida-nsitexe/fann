@@ -1,7 +1,7 @@
 TARGET:=FANN-dyn
 PLATFORM:=nsitexe_dr1000c
 
-USER_BUILD:=pushd ..; ./install_fann.sh; popd; pushd ../examples; ./build_simple.sh; popd
+USER_BUILD:=pushd ..; ./install_FANN.sh; popd; pushd ../examples; ./build_simple.sh; popd
 USER_RUN:=pushd ../examples; ./run_simple.sh; popd
 OPTIMISTIC_ANALYSIS:=0
 CANDIDATE_THRESHOLD:=50
@@ -16,5 +16,6 @@ BASEPATH:=.
 PTHREADS_PROGRAM:=0
 SCALAR_CONTENTION:=0
 ENABLE_AUTO_VECTORIZATION:=0
-USER_CLEAN:=pushd ../examples; ./clean_examples.sh; popd; pushd ..; ./uninstall_fann.sh; popd
+USER_CLEAN:=pushd ../examples; ./clean_examples.sh; popd; pushd ..; ./uninstall_FANN.sh; popd
 USER_SLX_MODE_SWITCH:=pushd ../examples; ./clean_examples.sh; popd
+USER_INIT:=
