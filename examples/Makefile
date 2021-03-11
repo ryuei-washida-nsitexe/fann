@@ -3,10 +3,13 @@
 GCC=gcc
 CFLAGS=-I ../src/include
 #LDFLAGS=-L ../src/
-LDFLAGS=-L ../src/ -L ../FANN/lib/ -Wl,--rpath=../FANN/lib/
+LDFLAGS:=-L ../src/ -L ../FANN/lib/
 
-TARGETS = xor_train xor_test xor_test_fixed simple_train steepness_train simple_test robot mushroom cascade_train scaling_test scaling_train
-DEBUG_TARGETS = xor_train_debug xor_test_debug xor_test_fixed_debug cascade_train_debug
+LD_LIBRARY_PATH:=../FANN/lib
+
+#TARGETS = xor_train xor_test xor_test_fixed simple_train steepness_train simple_test robot mushroom cascade_train scaling_test scaling_train
+TARGETS = xor_train xor_test xor_test_fixed
+#DEBUG_TARGETS = xor_train_debug xor_test_debug xor_test_fixed_debug cascade_train_debug
 
 all: $(TARGETS)
 
