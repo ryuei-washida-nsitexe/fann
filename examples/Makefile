@@ -8,7 +8,7 @@ LDFLAGS=-L ../src/ -L ../FANN/lib/
 LD_LIBRARY_PATH=../FANN/lib/:$LD_LIBRARY_PATH
 
 #TARGETS = xor_train xor_test xor_test_fixed simple_train steepness_train simple_test robot mushroom cascade_train scaling_test scaling_train
-TARGETS = xor_train xor_test xor_test_fixed
+TARGETS = xor_test_seq
 #DEBUG_TARGETS = xor_train_debug xor_test_debug xor_test_fixed_debug cascade_train_debug
 
 all: $(TARGETS)
@@ -26,16 +26,20 @@ clean:
 
 runtest: $(TARGETS)
 	@echo
-	@echo Training network
-	./xor_train
+	@echo Training network and Testing network with floats
+	./xor_test_seq
 
-	@echo
-	@echo Testing network with floats
-	./xor_test
-
-	@echo
-	@echo Testing network with fixed points
-	./xor_test_fixed
+#	@echo
+#	@echo Training network
+#	./xor_train
+#
+#	@echo
+#	@echo Testing network with floats
+#	./xor_test
+#
+#	@echo
+#	@echo Testing network with fixed points
+#	./xor_test_fixed
 
 #below this line is only for debugging the fann library
 
